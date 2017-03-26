@@ -3,6 +3,8 @@
 namespace PolarYouth\Cities;
 
 use Illuminate\Support\ServiceProvider;
+use PolarYouth\Cities\Controller\CityController;
+use PolarYouth\Cities\Controller\ProvinceController;
 
 /**
  * Class CityServiceProvider
@@ -23,7 +25,7 @@ class CityServiceProvider extends ServiceProvider
             $source      =  __DIR__ . '/migrations/create_belgian_cities_table';
             $destination = database_path("/migrations/{$timestamp}_create_belgian_cities_table.php");
 
-            $this->publishes([$source => $destination]);
+            $this->publishes([$source => $destination], 'migrations');
         }
     }
 
@@ -32,6 +34,7 @@ class CityServiceProvider extends ServiceProvider
      */
     public function register()
     {
-       //
+       $this->app->make(ProvinceController::class);
+       $this->app->make(CityController::class);
     }
 }

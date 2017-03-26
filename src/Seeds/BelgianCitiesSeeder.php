@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 use PolarYouth\Cities\Models\Cities;
 use PolarYouth\Cities\Models\Provinces;
 
