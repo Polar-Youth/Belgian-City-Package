@@ -1,0 +1,34 @@
+{
+    "name": "py/belgian-cities",
+    "description": "Composer package for the cities in belguim",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tim Joosten",
+            "email": "Tjoosten3@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/support": "^5.4",
+        "Illuminate/Database": "^5.4",
+        "league/csv": "8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.0",
+        "phpunit/phpunit": "5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "PolarYouth\\Cities\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PolarYouth\\Cities\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    }
+}

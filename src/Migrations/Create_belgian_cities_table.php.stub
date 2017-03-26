@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateBelgianCitiesTables extends Migration
+{
+    /**
+     * Run the migration
+     */
+    public function up()
+    {
+        Schema::create('belgian_cities', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('province_id');
+            $table->integer('postal_code');
+            $table->string('name');
+            $table->float('lat');
+            $table->float('lng');
+            $table->timestamps();
+        });
+
+        Schema::create('belgian_provinces', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migration
+     */
+    public function down()
+    {
+        Schema::dropIfExists('belgian_cities');
+        Schema::dropIfExists('belgian_provinces');
+    }
+}
