@@ -1,13 +1,35 @@
+/// [MIXIN] text-shadow
+/// ----
+/// Mixin foàr given a text a shadow effect.
+///
+/// @param {string} $string [0 1px 3px rgba(0, 0, 0, 0.25)] - The specifications.
+///
 @mixin text-shadow($string: 0 1px 3px rgba(0, 0, 0, 0.25)) {
   text-shadow: $string;
 }
 
+/// [MIXIN]: box-shadow
+/// ----
+/// Mixin for a shadow on a element.
+///
+/// @param {string} $string [] - The box shadow code.
+///
 @mixin box-shadow($string) {
   -webkit-box-shadow: $string;
      -moz-box-shadow: $string;
           box-shadow: $string;
 }
 
+/// [MIXIN]: drop-shadow
+/// ----
+/// Mixin for dropping a shadow on a element.
+///
+/// @param {integer} $x      [0]    - The X axis for the shadow.
+/// @param {integer} $y      [0]    - The Y axis for the shadow.
+/// @param {string}  $blur   [2px]  - The blur size for the shadow.
+/// @param {integer} $spread [0]    - The spread size for the shadow.
+/// @param {float}   $alpha  [0.25] - The alpha attribute for the rgb color.
+///
 @mixin drop-shadow($x: 0, $y: 1px, $blur: 2px, $spread: 0, $alpha: 0.25) {
   -webkit-box-shadow: $x $y $blur $spread rgba(0, 0, 0, $alpha);
      -moz-box-shadow: $x $y $blur $spread rgba(0, 0, 0, $alpha);
@@ -60,6 +82,15 @@
           background-clip: padding-box;
 }
 
+/// [MIXIN]: border-radiuses
+/// ----
+/// Get all the possible border-radius properties.
+///
+/// @param {integer} $topright    [0] - The top right border-radius value.
+/// @param {integer} $bottomright [0] - The bottom right border-radius value.
+/// @param {integer} $bottomleft  [0] - The bottom left border-radius value.
+/// @param {integer} $topleft     [0] - The top left border-radius value.
+///
 @mixin border-radiuses($topright: 0, $bottomright: 0, $bottomleft: 0, $topleft: 0) {
   -webkit-border-top-right-radius:    $topright;
   -webkit-border-botom-right-radius:  $bottomright;
@@ -75,6 +106,12 @@
 
 }
 
+/// [MIXIN]: opacity
+/// ----
+/// The opacity property sets the opacity level for an element.
+///
+/// @param {string} $opacity [0.5] - The value for the opacity.
+///
 @mixin opacity($opacity: 0.5) {
   -webkit-opacity: $opacity;
      -moz-opacity: $opacity;
@@ -115,12 +152,27 @@
   background-image:      -o-linear-gradient(left, $startColor, $endColor);
 }
 
+/// [MIXIN]: animation
+/// ----
+/// Mixin for css animations.
+///
+/// @param {string}  $name     []      - The name for the animation.
+/// @param {string}  $duration [300ms] = The duration off the animation.
+/// @param {integer} $delay    [0]     - The delay for the animation.
+/// @param {string}  $ease     [ease]  - The ease specification.
+///
 @mixin animation($name, $duration: 300ms, $delay: 0, $ease: ease) {
   -webkit-animation: $name $duration $delay $ease;
      -moz-animation: $name $duration $delay $ease;
       -ms-animation: $name $duration $delay $ease;
 }
 
+/// [MIXIN]: transition
+/// ----
+/// The transition mixin.
+///
+/// @param {string} $transition [] - The transition data.
+///
 @mixin transition($transition) {
   -webkit-transition: $transition;
      -moz-transition: $transition;
@@ -128,6 +180,12 @@
        -o-transition: $transition;
 }
 
+/// [MIXIN]: transform
+/// ----
+/// The mixin for transforms in the css code.
+///
+/// @param {string} $string [] - The transformation data.
+///
 @mixin transform($string) {
   -webkit-transform: $string;
      -moz-transform: $string;
@@ -135,12 +193,25 @@
        -o-transform: $string;
 }
 
+/// [MIXIN]: scale
+/// ----
+/// The scale mixin
+///
+/// @param {string} $factor [] - The factor data.
+///
 @mixin scale ($factor) {
   -webkit-transform: scale($factor);
      -moz-transform: scale($factor);
       -ms-transform: scale($factor);
        -o-transform: scale($factor);
 }
+
+/// [MIXIN]: rotate
+/// ----
+/// The rotate mixin
+///
+/// @param {integer} $deg [] - The degrees off the rotation.
+///
 @mixin rotate ($deg) {
   -webkit-transform: rotate($deg);
   -moz-transform:    rotate($deg);
@@ -148,6 +219,13 @@
   -o-transform:      rotate($deg);
 }
 
+/// [MIXIN]: skew
+/// ----
+/// The skew mixin
+///
+/// @param {integer} $deg  [] - The first degree.
+/// @param {integer} $deg2 [] - The second degree.
+///
 @mixin skew ($deg, $deg2) {
   -webkit-transform: skew($deg, $deg2);
      -moz-transform: skew($deg, $deg2);
@@ -155,6 +233,13 @@
        -o-transform: skew($deg, $deg2);
 }
 
+/// [MIXIN] translate:
+/// ----
+/// The translate mixin.
+///
+/// @param {string} $x []  - The X axis
+/// @param {string} $y [0] - The Y axis
+///
 @mixin translate ($x, $y: 0) {
   -webkit-transform: translate($x, $y);
      -moz-transform: translate($x, $y);
@@ -162,18 +247,41 @@
        -o-transform: translate($x, $y);
 }
 
+/// [MIXIN]: translate2d
+/// ----
+/// The translate3d mixin
+///
+/// @param {integer} $x []  - The x axis
+/// @param {integer} $y [0] - The Y axis
+/// @param {integer} $z [0] - The Z axis
+///
 @mixin translate3d ($x, $y: 0, $z: 0) {
   -webkit-transform: translate3d($x, $y, $z);
      -moz-transform: translate3d($x, $y, $z);
       -ms-transform: translate3d($x, $y, $z);
        -o-transform: translate3d($x, $y, $z);
 }
-.perspective ($value: 1000) {
+
+/// [MIXIN]: perspective
+/// ----
+/// The perspective mixin.
+///
+/// @param {integer} $value [1000] - The perspective value.
+///
+@mixin perspective ($value: 1000) {
   -webkit-perspective: 	$value;
      -moz-perspective: 	$value;
       -ms-perspective: 	$value;
           perspective: 	$value;
 }
+
+/// [MIXIN]: transform-origin
+/// ----
+/// The transform-origin mixin
+///
+/// @param {string} $x [center] - The X axis.
+/// @param {string} $y [center] - The Y axis.
+///
 @mixin transform-origin ($x: center, $y: center) {
   -webkit-transform-origin: $x $y;
      -moz-transform-origin: $x $y;
@@ -181,15 +289,27 @@
        -o-transform-origin: $x $y;
 }
 
+/// [MIXIN]: reset-box-sizing
+/// ----
+/// Mixin for resetting the box-sizing.
+///
+/// @param {string} $size [content-box] - The size attribute
+///
 @mixin reset-box-sizing ($size: content-box) {
   &,
   *,
   *:before,
   *:after {
-    .box-sizing($size);
+    @include box-sizing($size);
   }
 }
 
+/// [MIXIN]: truncate
+/// ----
+/// Mixin for truncating an element.
+///
+/// @param {hex code} $max-width [250 px] - The max width size for the truncate.
+///
 @mixin truncate ($max-width: 250px) {
   max-width:      $max-width;
   white-space:    nowrap;
@@ -197,6 +317,12 @@
   text-overflow:  ellipsis;
 }
 
+/// [MIXIN]: background-size
+/// ----
+/// Mixin for specifying the background size
+///
+/// @param {string} $string [contain] - The specifications.
+///
 @mixin background-size ($string: contain) {
   -webkit-background-size: $string;
      -moz-background-size: $string;
@@ -204,7 +330,13 @@
           background-size: $string;
 }
 
-.placeholder ($color: #999) {
+/// [MIXIN]: placeholder
+/// ----
+/// The placeholder mixin for the form inputs.
+///
+/// @param {hex code} $color [#999] - The hex color for the placeholder text.
+///
+@mixin placeholder ($color: #999) {
   &::-webkit-input-placeholder { // WebKit browsers
     color: $color;
   }
