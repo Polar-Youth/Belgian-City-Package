@@ -1,0 +1,220 @@
+@mixin text-shadow($string: 0 1px 3px rgba(0, 0, 0, 0.25)) {
+  text-shadow: $string;
+}
+
+@mixin box-shadow($string) {
+  -webkit-box-shadow: $string;
+     -moz-box-shadow: $string;
+          box-shadow: $string;
+}
+
+@mixin drop-shadow($x: 0, $y: 1px, $blur: 2px, $spread: 0, $alpha: 0.25) {
+  -webkit-box-shadow: $x $y $blur $spread rgba(0, 0, 0, $alpha);
+     -moz-box-shadow: $x $y $blur $spread rgba(0, 0, 0, $alpha);
+          box-shadow: $x $y $blur $spread rgba(0, 0, 0, $alpha);
+}
+
+/// [MIXIN]: inner-shadow
+/// ----
+/// Mixin for shadows inside some element.
+///
+/// @param {integer} $x      [0]    - The X axis for the shadow.
+/// @param {integer} $y      [0]    - The Y axis for the shadow.
+/// @param {string}  $blur   [2px]  - The blur size for the shadow.
+/// @param {integer} $spread [0]    - The spread size for the shadow.
+/// @param {float}   $alpha  [0.25] - The alpha attribute for the rgb color.
+///
+@mixin inner-shadow($x: 0, $y: 0, $blur: 2px, $spread: 0, $alpha: 0.25) {
+  -webkit-box-shadow: inset $x $y $blur $spread rgba(0, 0, 0, $alpha);
+     -moz-box-shadow: inset $x $y $blur $spread rgba(0, 0, 0, $alpha);
+          box-shadow: inset $x $y $blur $spread rgba(0, 0, 0, $alpha);
+}
+
+/// [MIXIN]: box-sizing
+/// ----
+/// The box-sizing property is used to tell the browser what the sizing properties (width and height) should include.
+///
+/// @param {string} $type   [border-box] - The box sizing method.
+///
+@mixin box-sizing($type: border-box) {
+  -webkit-box-sizing: $type;
+     -moz-box-sizing: $type;
+          box-sizing: $type;
+}
+
+/// [MIXIN]: border-radius
+/// ----
+/// The border-radius property is used to add rounded corners to an element.
+///
+/// @param {string} $radius [5px] - The brder rad
+///
+@mixin border-radius($radius: 5px) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+
+  -webkit-background-clip: padding-box;
+      -moz-backgroup-clip: padding;
+          background-clip: padding-box;
+}
+
+@mixin border-radiuses($topright: 0, $bottomright: 0, $bottomleft: 0, $topleft: 0) {
+  -webkit-border-top-right-radius:    $topright;
+  -webkit-border-botom-right-radius:  $bottomright;
+  -webkit-bordert-bottom-left-radius: $bottomleft;
+  -webkit-border-top-left-radius:     $topleft;
+
+  -moz-border-radius: $topleft $topright $bottomright $bottomleft;
+  border-radius:      $topleft $topright $bottomright $bottomleft;
+
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+
+}
+
+@mixin opacity($opacity: 0.5) {
+  -webkit-opacity: $opacity;
+     -moz-opacity: $opacity;
+          opacity: $opacity;
+}
+
+/// [MIXIN]: gradient
+/// -----
+/// CSS3 gradients let you display smooth transitions between two or more specified colors.
+///
+/// @param {integer} $startColor [#eee] - The start color for the gradient.
+/// @param {integer} $endColor   [#fff] - The end color for the gradient.
+///
+@mixin gradient($startColor: #eee, $endColor: #fff) {
+  background-color: $startColor;
+
+  background: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor));
+  background: -webkit-linear-gradient(top, $startColor, $endColor);
+  background:    -moz-linear-gradient(top, $startColor, $endColor);
+  background:     -ms-linear-gradient(top, $startColor, $endColor);
+  background:      -o-linear-gradient(top, $startColor, $endColor);
+}
+
+/// [MIXIN]: horizontal-gradient
+/// ----
+/// CSS3 gradients let you display smooth transitions between two or more specified colors.
+///
+/// @param {integer} $startColor [#eee] - The start color for the gradient.
+/// @param {integer} $endColor   [#fff] - The end color for the gradient.
+///
+@mixin horizontal-gradient($startColor: #eee, $endColor: #fff) {
+  background-color: $startColor;
+
+  background-image: -webkit-gradient(linear, left top, right top, from($startColor), to($endColor));
+  background-image: -webkit-linear-gradient(left, $startColor, $endColor);
+  background-image:    -moz-linear-gradient(left, $startColor, $endColor);
+  background-image:     -ms-linear-gradient(left, $startColor, $endColor);
+  background-image:      -o-linear-gradient(left, $startColor, $endColor);
+}
+
+@mixin animation($name, $duration: 300ms, $delay: 0, $ease: ease) {
+  -webkit-animation: $name $duration $delay $ease;
+     -moz-animation: $name $duration $delay $ease;
+      -ms-animation: $name $duration $delay $ease;
+}
+
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+     -moz-transition: $transition;
+      -ms-transition: $transition;
+       -o-transition: $transition;
+}
+
+@mixin transform($string) {
+  -webkit-transform: $string;
+     -moz-transform: $string;
+      -ms-transform: $string;
+       -o-transform: $string;
+}
+
+@mixin scale ($factor) {
+  -webkit-transform: scale($factor);
+     -moz-transform: scale($factor);
+      -ms-transform: scale($factor);
+       -o-transform: scale($factor);
+}
+@mixin rotate ($deg) {
+  -webkit-transform: rotate($deg);
+  -moz-transform:    rotate($deg);
+  -ms-transform:     rotate($deg);
+  -o-transform:      rotate($deg);
+}
+
+@mixin skew ($deg, $deg2) {
+  -webkit-transform: skew($deg, $deg2);
+     -moz-transform: skew($deg, $deg2);
+      -ms-transform: skew($deg, $deg2);
+       -o-transform: skew($deg, $deg2);
+}
+
+@mixin translate ($x, $y: 0) {
+  -webkit-transform: translate($x, $y);
+     -moz-transform: translate($x, $y);
+      -ms-transform: translate($x, $y);
+       -o-transform: translate($x, $y);
+}
+
+@mixin translate3d ($x, $y: 0, $z: 0) {
+  -webkit-transform: translate3d($x, $y, $z);
+     -moz-transform: translate3d($x, $y, $z);
+      -ms-transform: translate3d($x, $y, $z);
+       -o-transform: translate3d($x, $y, $z);
+}
+.perspective ($value: 1000) {
+  -webkit-perspective: 	$value;
+     -moz-perspective: 	$value;
+      -ms-perspective: 	$value;
+          perspective: 	$value;
+}
+@mixin transform-origin ($x: center, $y: center) {
+  -webkit-transform-origin: $x $y;
+     -moz-transform-origin: $x $y;
+      -ms-transform-origin: $x $y;
+       -o-transform-origin: $x $y;
+}
+
+@mixin reset-box-sizing ($size: content-box) {
+  &,
+  *,
+  *:before,
+  *:after {
+    .box-sizing($size);
+  }
+}
+
+@mixin truncate ($max-width: 250px) {
+  max-width:      $max-width;
+  white-space:    nowrap;
+  overflow:       hidden;
+  text-overflow:  ellipsis;
+}
+
+@mixin background-size ($string: contain) {
+  -webkit-background-size: $string;
+     -moz-background-size: $string;
+       -o-background-size: $string;
+          background-size: $string;
+}
+
+.placeholder ($color: #999) {
+  &::-webkit-input-placeholder { // WebKit browsers
+    color: $color;
+  }
+  &:-moz-placeholder { // Mozilla Firefox 4 to 18
+    color: $color;
+  }
+  &::-moz-placeholder { // Mozilla Firefox 19+
+    color: $color;
+  }
+  &:-ms-input-placeholder { // Internet Explorer 10+
+    color: $color;
+  }
+}
