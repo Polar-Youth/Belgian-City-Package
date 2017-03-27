@@ -24,4 +24,14 @@ class Cities extends Model
      * @var array
      */
     protected $fillable = ['province_id', 'postal_code', 'name', 'lat', 'lng'];
+
+    /**
+     * Get the province data for a city.
+     *
+     * @return mixed
+     */
+    public function province()
+    {
+        return $this->belongsTo(Provinces::class, 'province_id');
+    }
 }

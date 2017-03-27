@@ -28,4 +28,14 @@ class ProvinceController extends Controller
     {
         $this->province = $province;
     }
+
+    public function getCitiesAntwerp()
+    {
+
+    }
+
+    public function getCitiesLimburg()
+    {
+
+    }
 }
