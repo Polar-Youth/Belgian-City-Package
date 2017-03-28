@@ -19,13 +19,21 @@ class CityServiceProvider extends ServiceProvider
     public function boot()
     {
         if (! class_exists('CreateBelgianCitiesTables')) { // Class doesn't exists
-            $timestamp = date('Y_M_D_His', time());
+            $timestamp = date('Y_m_m_His', time());
 
             // File paths
             $source      =  __DIR__ . '/migrations/create_belgian_cities_table.php.stub';
             $destination = database_path("/migrations/{$timestamp}_create_belgian_cities_table.php");
 
             $this->publishes([$source => $destination], 'migrations');
+        }
+
+        if (! class_exists('BelgianCitiesSeeder')) { // Class doesn't exists
+            // File paths
+            $seederSource      = __DIR__ . 'seeds/BelgianCitiesSeeder');
+            $seederDestination = database_path('/seeds/BelgianCitiesSeeder.php');
+
+            $this->publishes([$seederSource => $seederDestination], 'seeds');
         }
     }
 
