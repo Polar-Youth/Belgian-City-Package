@@ -32,9 +32,9 @@ class CityController extends Controller
      * @param  int $name
      * @return mixed
      */
-    public function findByCode($name)
+    public function findByCode($code)
     {
-        return $this->city->where('postal_code', $name)->get();
+        return $this->city->where('postal_code', $code)->get();
     }
 
     /**
@@ -55,7 +55,6 @@ class CityController extends Controller
      */
     public function allCities()
     {
-        $query = $this->city->with('province');
-        return $query->get();
+        return $this->city->with(['province'])->get();
     }
 }
