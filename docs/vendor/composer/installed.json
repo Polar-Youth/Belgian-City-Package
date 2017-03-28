@@ -1,0 +1,42 @@
+[
+    {
+        "name": "heimrichhannot/elegant-icons",
+        "version": "1.0.3",
+        "version_normalized": "1.0.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/heimrichhannot/elegant-icons.git",
+            "reference": "744b6a452df568837baf0a7a386ba657f0bda0d5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/heimrichhannot/elegant-icons/zipball/744b6a452df568837baf0a7a386ba657f0bda0d5",
+            "reference": "744b6a452df568837baf0a7a386ba657f0bda0d5",
+            "shasum": ""
+        },
+        "time": "2016-09-09 14:02:22",
+        "type": "component",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "4.4.x-dev"
+            },
+            "component": {
+                "styles": [
+                    "css/elegant-icons.css"
+                ],
+                "files": [
+                    "css/elegant-icons.min.css",
+                    "fonts/*",
+                    "less/*"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT",
+            "OFL-1.1"
+        ],
+        "description": "The Elegant Icon Font from http://www.elegantthemes.com/blog/resources/elegant-icon-font as composer component with less support."
+    }
+]

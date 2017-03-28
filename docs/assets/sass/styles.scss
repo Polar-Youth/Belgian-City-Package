@@ -7,6 +7,11 @@
 // Website: http://themes.3rdwavemedia.com/
 //
 
+// Vendor partials
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../../node_modules/font-awesome/scss/font-awesome";
+
+// Theme partials
 @import "modules/colors-default";
 @import "partials/mixins";
 @import "partials/base";
