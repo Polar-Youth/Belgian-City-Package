@@ -1,6 +1,6 @@
 <?php
 
-namespace PolarYouth\Cities\Controller;
+namespace PolarYouth\Cities\Controllers;
 
 use App\Http\Controllers\Controller;
 use PolarYouth\Cities\Models\Provinces;
