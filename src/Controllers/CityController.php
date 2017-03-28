@@ -57,4 +57,9 @@ class CityController extends Controller
     {
         return $this->city->with(['province'])->get();
     }
+
+    public function getByProvince()
+    {
+
+    }
 }

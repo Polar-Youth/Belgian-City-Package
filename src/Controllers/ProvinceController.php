@@ -3,6 +3,7 @@
 namespace PolarYouth\Cities\Controllers;
 
 use App\Http\Controllers\Controller;
+use PolarYouth\Cities\Models\Cities;
 use PolarYouth\Cities\Models\Provinces;
 
 /**
@@ -20,21 +21,24 @@ class ProvinceController extends Controller
     private $province;
 
     /**
+     * The city model.
+     *
+     * @var Cities
+     */
+    private $cities;
+
+    /**
      * ProvinceController constructor.
      *
      * @param Provinces $province
      */
-    public function __construct(Provinces $province)
+    public function __construct(Provinces $province, Cities $cities)
     {
+        $this->cities   = $cities;
         $this->province = $province;
     }
 
-    public function getCitiesAntwerp()
-    {
-
-    }
-
-    public function getCitiesLimburg()
+    public function getProvinces()
     {
 
     }
