@@ -3,8 +3,8 @@
 namespace PolarYouth\Cities;
 
 use Illuminate\Support\ServiceProvider;
-use PolarYouth\Cities\Controller\CityController;
-use PolarYouth\Cities\Controller\ProvinceController;
+use PolarYouth\Cities\Controllers\CityController;
+use PolarYouth\Cities\Controllers\ProvinceController;
 
 /**
  * Class CityServiceProvider
