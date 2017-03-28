@@ -19,6 +19,7 @@ class BelgianCitiesSeeder extends Seeder
         // Provinces part
         $provinces = [
             ['name' => 'Antwerpen'],
+            ['name' => 'Brussel'],
             ['name' => 'Oost-Vlaanderen'],
             ['name' => 'Vlaams-Brabant'],
             ['name' => 'Limburg'],
