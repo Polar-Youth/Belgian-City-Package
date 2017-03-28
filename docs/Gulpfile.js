@@ -19,5 +19,6 @@ gulp.task('copy-fonts', function() {
 });
 
 gulp.task('copy-js', function() {
-    gulp.src('./node_modules/')
+    gulp.src('./node_modules/bootstrap-sass/assets/javascripts/bootstrap.js')
+        .pipe(gulp.dest('./assets/js'))
 });
