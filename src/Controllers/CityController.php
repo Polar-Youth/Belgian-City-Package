@@ -58,4 +58,9 @@ class CityController extends Controller
         $query = $this->city->with('province');
         return $query->get();
     }
+
+    public function getByProvince()
+    {
+
+    }
 }
