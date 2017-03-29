@@ -18,6 +18,7 @@ class CityServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // Database migration publish
         if (! class_exists('CreateBelgianCitiesTable')) { // Class doesn't exists
             $timestamp = date('Y_m_m_His', time());
 
@@ -28,6 +29,7 @@ class CityServiceProvider extends ServiceProvider
             $this->publishes([$source => $destination], 'migrations');
         }
 
+        // Database seeder publish
         if (! class_exists('BelgianCitiesSeeder')) { // Class doesn't exists
             // File paths
             $seederSource      = __DIR__ . '/seeds/BelgianCitiesSeeder.php';

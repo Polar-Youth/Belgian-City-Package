@@ -31,6 +31,7 @@ class ProvinceController extends Controller
      * ProvinceController constructor.
      *
      * @param Provinces $province
+     * @param Cities    $cities
      */
     public function __construct(Provinces $province, Cities $cities)
     {
