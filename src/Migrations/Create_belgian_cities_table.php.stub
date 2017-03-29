@@ -15,8 +15,8 @@ class CreateBelgianCitiesTable extends Migration
             $table->integer('province_id');
             $table->integer('postal_code');
             $table->string('name');
-            $table->float('lat');
-            $table->float('lng');
+            $table->string('lat');
+            $table->string('lng');
             $table->timestamps();
         });
 
