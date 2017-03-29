@@ -18,7 +18,7 @@ class CityServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (! class_exists('CreateBelgianCitiesTables')) { // Class doesn't exists
+        if (! class_exists('CreateBelgianCitiesTable')) { // Class doesn't exists
             $timestamp = date('Y_m_m_His', time());
 
             // File paths
