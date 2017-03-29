@@ -30,7 +30,7 @@ class CityServiceProvider extends ServiceProvider
 
         if (! class_exists('BelgianCitiesSeeder')) { // Class doesn't exists
             // File paths
-            $seederSource      = __DIR__ . 'seeds/BelgianCitiesSeeder.php';
+            $seederSource      = __DIR__ . '/seeds/BelgianCitiesSeeder.php';
             $seederDestination = database_path('/seeds/BelgianCitiesSeeder.php');
 
             $this->publishes([$seederSource => $seederDestination], 'seeds');
